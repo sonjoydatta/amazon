@@ -1,0 +1,274 @@
+.Header {
+  display: none;
+  padding-top: 22px;
+  padding-bottom: 5px;
+  background-color: $white;
+
+  @include media-breakpoint-up(md) {
+    display: block;
+  }
+
+  &-Brand {
+    text-align: center;
+  }
+
+  .Navigation {
+
+    &Desktop {
+      margin-top: 22px;
+
+      &-Nav {
+        margin: 0;
+        padding: 0;
+
+        li {
+          position: relative;
+          display: inline-block;
+          margin-right: 32px;
+
+          @include media-breakpoint-down(lg) {
+            margin-right: 30px;
+          }
+
+          @include media-breakpoint-down(md) {
+            margin-right: 10px;
+          }
+
+          &:last-child {
+            margin-right: 0;
+          }
+
+          a {
+
+            img {
+              width: 23px;
+            }
+          }
+        }
+
+        &__CartCount {
+          position: absolute;
+          top: 2px;
+          right: -2px;
+          width: 15px;
+          height: 15px;
+          font-size: 11px;
+          font-weight: bold;
+          line-height: 15px;
+          color: $white;
+          text-align: center;
+          background-color: $primary;
+        }
+      }
+
+      &-SearchBar {
+        height: 45px;
+        margin: 4px;
+        padding: 8px 0;
+        @include flexbox();
+        @include rounded(4px);
+        @include box-shadow(0, 0, 4px, rgba($color: $black, $alpha: 0.15));
+
+        &__Categories {
+          width: 142px;
+          margin-right: 10px;
+          border-right: 1px solid rgba($color: $black, $alpha: 0.15);
+          
+          &__control {
+            border-radius: 0;
+            border-width: 0;
+            min-height: 29px;
+
+            &:hover,
+            &--is-focus,
+            &--is-focused,
+            &--is-open {
+              border-width: 0;
+              box-shadow: none;
+            }
+          }
+
+          &__value-container {
+            padding: 0 0 0 15px;
+          }
+
+          &__single-value {
+            margin-left: 0;
+          }
+
+          &__indicator {
+            padding-top: 0;
+            padding-bottom: 0;
+
+            svg {
+              width: 16px;
+              height: 16px;
+            }
+
+            &-separator {
+              display: none;
+            }
+          }
+
+          &__option {
+
+            &--is-focused {
+              background-color: rgba($color: $primary, $alpha: 0.075);
+            }
+
+            &--is-selected {
+              background-color: $primary;
+            }
+          }
+
+          &__menu {
+            margin-top: 0;
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+            @include box-shadow(0, 3px, 4px, rgba($color: $black, $alpha: 0.15));
+          }
+        }
+
+        &__Keyword {
+          width: 100%;
+          border: 0;
+
+          &:focus {
+            outline: 0;
+            border: 0;
+            box-shadow: none;
+          }
+
+          &::placeholder {
+            color: rgba($color: $black, $alpha: 0.25);
+            opacity: 1;
+          }
+
+          &::-ms-input-placeholder {
+            color: rgba($color: $black, $alpha: 0.25);
+          }
+
+          &::-ms-input-placeholder {
+            color: rgba($color: $black, $alpha: 0.25);
+          }
+        }
+
+        &__Actions {
+          margin-top: -8px;
+          margin-bottom: -8px;
+
+          .btn {
+            height: 100%;
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+
+            &-primary {
+
+              &:hover,
+              &:focus {
+                box-shadow: none;
+                border-color: $primary;
+                background-color: $primary;
+              }
+            }
+
+            &-link {
+
+              &:hover,
+              &:focus {
+                box-shadow: none;
+              }
+            }
+
+            img {
+              min-width: 23px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .InternalLinks {
+    max-width: 690px;
+    padding-right: 40px;
+
+    .dropdown {
+      display: inline-block;
+      
+      &-toggle {
+        color: $body-color;
+        @include flexbox();
+
+        &:hover,
+        &:focus {
+          box-shadow: none;
+          text-decoration: none;
+        }
+
+        &:after {
+          width: 16px;
+          height: 11px;
+          background-position: center;
+          margin-top: 6px;
+          border: 0;
+          background-size: cover;
+          background-repeat: no-repeat;
+          background-image: url('../images/icons/arrow-down-s-line.svg');
+          @include transition(300ms linear all);
+        }
+      }
+
+      &-menu {
+        border: 0;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        @include box-shadow(0, 3px, 3px, rgba($color: $black, $alpha: 0.15));
+      }
+
+      &.show {
+      
+        .dropdown-toggle:after {
+          @include rotate(-180deg);
+        }
+      }
+    }
+
+    &-Single {
+      color: $body-color;
+      margin-left: 20px;
+    }
+  }
+
+  &.HeaderMobile {
+    display: none;
+    padding-top: 15px;
+    padding-bottom: 15px;
+
+    @include media-breakpoint-down(sm) {
+      display: block;
+    }
+    
+    .Header-Brand {
+      text-align: left;
+
+      img {
+        max-width: 110px;
+      }
+    }
+
+    .NavBtn {
+      padding: 0;
+      border: 0;
+
+      &:focus {
+        outline: none;
+        box-shadow: none;
+      }
+
+      img {
+        width: 23px;
+      }
+    }
+  }
+}
