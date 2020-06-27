@@ -32,4 +32,4 @@ This is Sonjoy Datta. I am a Front-end Web Developer. I am experienced in ReactJ
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](https://github.com/sonjoydatta/google-books/blob/master/LICENSE) file for details.
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/sonjoydatta/amazon/blob/master/LICENSE) file for details.
